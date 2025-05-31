@@ -1,16 +1,15 @@
 # Jakim D. Lopez 
 # Date: 2025-05-31
 # Laboratory Execise 12: Tagalog to English Translator
+# Best compatible python version to use: 3.12 below
 
 from googletrans import Translator
 
 def translate_tagalog(text):
-        translator = Translator()
-        translated = translator.translate(text, dest='en')
-        return translated.text
+    translator = Translator()
+    translation = translator.translate(text, dest='en')
 
-tagalog_text = input("Enter text: ")
+    return translation.text
 
-english_text = translate_tagalog(tagalog_text)
-
-print(f"Translated text: {english_text}")
+text = input("Enter text in Tagalog: ")
+print(f"Translated text: {translate_tagalog(text)}")
