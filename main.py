@@ -31,4 +31,6 @@ def rock_paper_scissors():
             break
 
 def main():
-    pass
+    rock_paper_scissors()
+
+main()
