@@ -1,2 +1,2 @@
-def main():
-    pass
+from googletrans import Translator
+import asyncio
