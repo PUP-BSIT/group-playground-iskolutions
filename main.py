@@ -1,3 +1,6 @@
+# Jakim D. Lopez 
+# Date: 2025-05-31
+
 from googletrans import Translator
 
 def translate_tagalog(text):
