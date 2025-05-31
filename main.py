@@ -30,6 +30,5 @@ def rock_paper_scissors():
             print("Thanks for playing")
             break
 
-
 def main():
     pass
