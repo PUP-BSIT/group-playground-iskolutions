@@ -1,5 +1,6 @@
 # Jakim D. Lopez 
 # Date: 2025-05-31
+# Laboratory Execise 12: Tagalog to English Translator
 
 from googletrans import Translator
 
