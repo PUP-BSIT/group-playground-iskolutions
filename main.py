@@ -3,22 +3,24 @@ import random
 def rock_paper_scissors():
     print("\nROCK, PAPER, SCISSORS!")
 
+    winning_combo = {
+        'rock': 'scissors',
+        'scissors': 'paper',
+        'paper': 'rock'
+    }
+
     while True:
         player_move = input("\nSelect (rock, paper, or scissors): ").lower()
-        if player_move not in ['rock', 'paper', 'scissors']:
+        if player_move not in winning_combo:
             print("Invalid move. Please try again")
             continue
     
-        computer_move = random.choice(['rock', 'paper', 'scissors'])
+        computer_move = random.choice(list(winning_combo.keys()))
         print(f"Computer chose: {computer_move}")
 
         if player_move == computer_move:
             print("It's a tie")
-        elif (
-            (player_move == 'rock' and computer_move == 'scissors') or
-            (player_move == 'paper' and computer_move == 'rock') or
-            (player_move == 'scissors' and computer_move == 'paper')
-        ):
+        elif winning_combo[player_move] == computer_move:
             print("You win!")
         else:
             print("Computer wins!")
