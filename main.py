@@ -5,11 +5,10 @@
 
 from googletrans import Translator
 
-def translate_tagalog(text):
-    translator = Translator()
-    translation = translator.translate(text, dest='en')
+translator = Translator()
 
-    return translation.text
+input_user = input("Enter text: ")
 
-text = input("Enter text in Tagalog: ")
-print(f"Translated text: {translate_tagalog(text)}")
+translation = translator.translate(input_user, src='tl', dest='en')
+
+print(f"Translated text: {translation.text}")
