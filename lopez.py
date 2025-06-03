@@ -1,5 +1,8 @@
 from os import system
 
+UNSET_OPTION = -1
+EXIT_OPTION = 6
+
 def display_menu():
     print("=== WELCOME TO JAKIM LOPEZ'S PROFILE ===")
     print("1. Get to know me better")
