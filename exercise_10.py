@@ -2,7 +2,7 @@ fruit_count = {}
 
 while True:
     fruit = input("Enter a fruit (type 'exit' to stop): ").lower()
-    if fruit.lower() == 'exit':
+    if fruit == 'exit':
         break
     if fruit in fruit_count:
         fruit_count[fruit] += 1

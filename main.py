@@ -1,6 +1,6 @@
 # Jakim D. Lopez 
 # Date: 2025-05-31
-# Laboratory Execise 12: Tagalog to English Translator
+# Laboratory Exercise 12: Tagalog to English Translator
 # Best compatible python version to use: 3.12 below
 
 from googletrans import Translator
