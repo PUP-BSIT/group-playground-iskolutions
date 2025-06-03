@@ -1,4 +1,5 @@
 import os
+import random
 
 BORDER = "=" * 47
 
@@ -39,44 +40,45 @@ def goals():
     print_border()
     return_to_main_menu()
 
-def skills():
-    print("SKILLS:")
-    print_border()
-    print("1. HTML, CSS, JavaScript")
-    print("2. Python (Kinda working on it)")
-    print("3. Painting and Singing")
-    print("4. Familiar with Git and GitHub")
-    print("5. Problem-solving and analytical skills (if I have sleep)")
-    print("6. Staying up late at night to finish projects")
-    print_border()
-    return_to_main_menu()
-
 def random_fact():
-    fact = "Did you know that turtles can breathe through their butts?"
+    facts = [
+        "Did you know that turtles can breathe through their butts?",
+        "Octopuses have three hearts — and two of them stop when they swim.",
+        "Bananas are berries, but strawberries aren't.",
+        "A day on Venus is longer than its year!",
+        "Sloths can hold their breath longer than dolphins can.",
+        "A group of flamingos is called a 'flamboyance'.",
+        "Sharks existed before trees. Nature said, 'priorities.'"
+    ]
+
     print("RANDOM FACTS:")
     print_border()
-    print("Do you want to know a random fact?")
+    print("Feeling curious? Let's see how your brain handles weird knowledge!")
 
     while True:
-        user_input = input("Answer with 'yes' or 'no': ").strip().lower()
+        user_input = input("Do you want a random fact?"
+                            + " (yes/no): ").strip().lower()
         print_border()
 
         if user_input == 'yes':
-            print(fact)
+            fact = random.choice(facts)
+            print(f"Here's a mind-blowing fact:\n {fact}")
             break
         elif user_input == 'no':
-            second_input = input("Nope, try again! "
-                                    + "'yes' or 'no': ").strip().lower()
+            second_input = input("Are you sure? I promise it’s worth it!"
+                                    + " (yes/no): ").strip().lower()
             print_border()
             if second_input == 'yes':
-                print(fact)
+                fact = random.choice(facts)
+                print(f"Expanding your brain...\n {fact}")
             elif second_input == 'no':
-                print("Awww fine. Maybe next time!")
+                print("Alright... maybe another time, curious cat.")
             else:
-                print("Invalid input. Please answer with 'yes' or 'no'.")
+                print("Hmm, I didn't quite catch that."
+                        + " Please answer with 'yes' or 'no'.")
             break
         else:
-            print("Invalid input. Please answer with 'yes' or 'no'.")
+            print("Oops! Please answer clearly with 'yes' or 'no'.")
 
     print_border()
     return_to_main_menu()
@@ -99,12 +101,11 @@ def franco_main():
     menu_options = {
         '1': basic_information,
         '2': goals,
-        '3': skills,
-        '4': random_fact,
-        '5': lambda: comment_section('5'),
-        '6': lambda: comment_section('6'),
-        '7': lambda: comment_section('7'),
-        '8': lambda: comment_section('8')
+        '3': random_fact,
+        '4': lambda: comment_section('5'),
+        '5': lambda: comment_section('6'),
+        '6': lambda: comment_section('7'),
+        '7': lambda: comment_section('8')
     }
 
     while True:
@@ -113,24 +114,23 @@ def franco_main():
         print_border()
         print("1. Basic Information")
         print("2. Goals")
-        print("3. Skills")
-        print("4. A Random Fact")
-        print("5. Comment from Causon")
-        print("6. Comment from Efondo")
-        print("7. Comment from Gagtan")
-        print("8. Comment from Lopez")
-        print("9. Exit")
+        print("3. A Random Fact")
+        print("4. Comment from Causon")
+        print("5. Comment from Efondo")
+        print("6. Comment from Gagtan")
+        print("7. Comment from Lopez")
+        print("8. Exit")
         print_border()
 
-        choice = input("Please select an option (1-9): ")
+        choice = input("Please select an option (1-8): ")
 
-        if choice == '9':
+        if choice == '8':
             print("Thank you for visiting! Goodbye!")
             break
         elif choice in menu_options:
             display_section(menu_options[choice])
         else:
-            print("Invalid choice. Please select a number between 1 and 9.")
+            print("Invalid choice. Please select a number between 1 and 8.")
             return_to_main_menu()
 
 franco_main()
