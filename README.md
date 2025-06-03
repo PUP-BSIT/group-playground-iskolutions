@@ -1,0 +1,1 @@
+Hi, ito ay lagayan ng mga bagsak ko sa buhay
