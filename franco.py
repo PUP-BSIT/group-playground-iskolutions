@@ -3,7 +3,7 @@ import os
 BORDER = "=" * 47
 
 def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls")
 
 def print_border():
     print(BORDER)
@@ -65,8 +65,8 @@ def random_fact():
             print(fact)
             break
         elif user_input == 'no':
-            second_input = input("Nope, try again!"
-                                + " 'yes' or 'no': ").strip().lower()
+            second_input = input("Nope, try again! "
+                                    + "'yes' or 'no': ").strip().lower()
             print_border()
             if second_input == 'yes':
                 print(fact)
@@ -81,31 +81,16 @@ def random_fact():
     print_border()
     return_to_main_menu()
 
-def comment_from_causon():
-    print("COMMENT FROM CAUSON:")
-    print_border()
-    print("")  # TODO(Causon): Input comment here.
-    print_border()
-    return_to_main_menu()
+def comment_section(comment_id):
+    comments = {
+        '5': "COMMENT FROM CAUSON:\n", #TODO(Causon): Add comment here
+        '6': "COMMENT FROM EFONDO:\n", #TODO(Efondo): Add comment here
+        '7': "COMMENT FROM GAGTAN:\n", #TODO(Gagtan): Add comment here
+        '8': "COMMENT FROM LOPEZ:\n"   #TODO(Lopez): Add comment here
+    }
 
-def comment_from_efondo():
-    print("COMMENT FROM EFONDO:")
-    print_border()
-    print("")  # TODO(Efondo): Input comment here.
-    print_border()
-    return_to_main_menu()
-
-def comment_from_gagtan():
-    print("COMMENT FROM GAGTAN:")
-    print_border()
-    print("")  # TODO(Gagtan): Input comment here.
-    print_border()
-    return_to_main_menu()
-
-def comment_from_lopez():
-    print("COMMENT FROM LOPEZ:")
-    print_border()
-    print("")  # TODO(Lopez): Input comment here.
+    title = comments.get(comment_id, "No comment available.")
+    print(title)
     print_border()
     return_to_main_menu()
 
@@ -116,10 +101,10 @@ def franco_main():
         '2': goals,
         '3': skills,
         '4': random_fact,
-        '5': comment_from_causon,
-        '6': comment_from_efondo,
-        '7': comment_from_gagtan,
-        '8': comment_from_lopez
+        '5': lambda: comment_section('5'),
+        '6': lambda: comment_section('6'),
+        '7': lambda: comment_section('7'),
+        '8': lambda: comment_section('8')
     }
 
     while True:
