@@ -89,12 +89,12 @@ def comment_section(comment_id):
         '8': "COMMENT FROM LOPEZ:\n"   #TODO(Lopez): Add comment here
     }
 
-    title = comments.get(comment_id, "No comment available.")
+    print_border()
+    title = comments.get(comment_id)
     print(title)
     print_border()
     return_to_main_menu()
 
-# Menu logic
 def franco_main():
     menu_options = {
         '1': basic_information,
