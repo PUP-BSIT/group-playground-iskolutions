@@ -20,3 +20,21 @@ def display_get_choice():
         system("cls")
         print("Invalid input.")
         return UNSET_OPTION
+    
+def process_choice(choice):
+    system("cls")
+    match choice:
+        case 1:
+            pass
+        case 2:
+            pass
+        case 3:
+            pass
+        case 4:
+            pass
+        case 5:
+            pass
+        case 6:
+            system("cls")
+        case _:
+            pass
