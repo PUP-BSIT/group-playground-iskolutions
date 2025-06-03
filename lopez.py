@@ -38,3 +38,10 @@ def process_choice(choice):
             system("cls")
         case _:
             pass
+
+def jakim():
+    system("cls")
+    choice = UNSET_OPTION
+    while choice != EXIT_OPTION:
+        choice = display_get_choice()
+        process_choice(choice)
