@@ -11,3 +11,12 @@ def display_menu():
     print("4. Kyle's comment")
     print("5. Hanz's comment")
     print("6. Pearl's Comment")
+    
+    try:
+        choice = int(input("Enter your choice:"))
+        system("cls")
+        return choice
+    except ValueError:
+        system("cls")
+        print("Invalid input.")
+        return UNSET_OPTION
